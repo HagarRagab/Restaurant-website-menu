@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Falafel Restaurant
 
-## Getting Started
+A modern restaurant menu website for **Falafel** — browse dishes, explore branches, and order with a clean, mobile-friendly experience.
 
-First, run the development server:
+**Live site:** [https://restaurant-website-menu-virid.vercel.app/](https://restaurant-website-menu-virid.vercel.app/)
+
+## Scan to visit
+
+Point your phone camera at the QR code below to open the live menu.
+
+![QR code linking to the Falafel Restaurant website](docs/website-qr.png)
+
+[https://restaurant-website-menu-virid.vercel.app/](https://restaurant-website-menu-virid.vercel.app/)
+
+## Features
+
+- Home page with hero, featured menu items, and branch locations
+- Full menu page with category tabs, search, and infinite scroll
+- Footer QR code for quick mobile access to the site
+- Content powered by [Sanity](https://www.sanity.io/)
+
+## Tech stack
+
+- [Next.js](https://nextjs.org/) 16 (App Router)
+- [React](https://react.dev/) 19
+- [Tailwind CSS](https://tailwindcss.com/) 4
+- [Sanity](https://www.sanity.io/) + `next-sanity`
+- [shadcn/ui](https://ui.shadcn.com/) components
+
+## Getting started
+
+### Prerequisites
+
+- Node.js 20+
+- npm
+- A Sanity project with menu and branch content configured
+
+### Install
+
+```bash
+npm install
+```
+
+### Environment variables
+
+Create a `.env` file in the project root:
+
+```env
+SITE_URL=https://restaurant-website-menu-virid.vercel.app/
+```
+
+Add your Sanity credentials as required by the project (see `lib/sanity/`).
+
+For client-side access to the site URL in components, use the `NEXT_PUBLIC_` prefix:
+
+```env
+NEXT_PUBLIC_SITE_URL=https://restaurant-website-menu-virid.vercel.app/
+```
+
+### Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/              # Next.js App Router pages and layout
+components/       # UI, sections (hero, menu, branches, footer), shared pieces
+hooks/            # Menu search, categories, infinite scroll
+lib/              # Sanity client, queries, helpers
+public/images/    # Static images
+docs/             # README assets (QR code image)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Command        | Description              |
+| -------------- | ------------------------ |
+| `npm run dev`  | Start development server |
+| `npm run build`| Production build         |
+| `npm run start`| Run production server    |
+| `npm run lint` | Run ESLint               |
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Private project.

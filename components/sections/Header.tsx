@@ -1,15 +1,9 @@
 "use client";
 
 // import { ShoppingCart } from "lucide-react";
-import { Gasoek_One } from "next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const gasoekOne = Gasoek_One({
-    subsets: ["latin"],
-    display: "swap",
-    weight: "400",
-});
+import Logo from "../shared/Logo";
 
 function Header() {
     const pathname = usePathname();
@@ -23,9 +17,7 @@ function Header() {
 
     return (
         <header className="flex items-center justify-between">
-            <Link href="/" className={`${gasoekOne.className} text-2xl`}>
-                Falafel
-            </Link>
+            <Logo />
             <nav>
                 <ul className="flex items-center justify-between gap-4">
                     <li>
