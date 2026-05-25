@@ -1,11 +1,27 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
 
 function SiteQRCode() {
+    const [siteUrl, setSiteUrl] = useState<string | null>(null);
+
+    useEffect(() => {
+        setSiteUrl(`${window.location.origin}/`);
+    }, []);
+
+    if (!siteUrl) {
+        return (
+            <div
+                className="size-[160px] bg-white/80 animate-pulse rounded"
+                aria-hidden
+            />
+        );
+    }
+
     return (
         <QRCode
-            value={process.env.SITE_UR || ""}
+            value={siteUrl}
             size={160}
             bgColor="#ffffff"
             fgColor="#0f3d1e"

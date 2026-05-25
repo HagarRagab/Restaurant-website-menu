@@ -6,7 +6,7 @@ import heroImage from "@/public/images/vegan-falafel-dish-with-crunchy-lettuce.p
 
 function Hero() {
     return (
-        <section className="min-h-96 sm:h-[calc(100vh-96px)] grid grid-cols-5 grid-rows-[repeat(4,auto)_1fr] justify-start gap-4 pt-4">
+        <section className="min-h-96 sm:h-[calc(100vh-96px)] grid grid-cols-5 grid-rows-[repeat(4,auto)_1fr] justify-start gap-4 pt-4 mb-10">
             <Badge
                 variant="secondary"
                 className="bg-white/30 backdrop-blur-sm uppercase px-6 py-3 text-base text-inherit col-start-1 col-end-6 sm:col-end-3"
@@ -23,7 +23,7 @@ function Hero() {
             <p className="text-2xl font-bold col-start-1 col-end-3">60 EGP</p>
             <Link
                 href="/menu"
-                className="col-start-1 col-end-2 h-fit w-fit px-8 py-2 text-center cursor-pointer hover:-translate-y-0.5 transition-transform shadow-lg capitalize rounded-full bg-primary"
+                className="col-start-1 col-end-3 h-fit max-w-40 text-nowrap text-sm sm:text-base sm:px-8 py-2 text-center cursor-pointer hover:-translate-y-0.5 transition-transform shadow-lg capitalize rounded-full bg-primary"
             >
                 start eating
             </Link>
